@@ -1,0 +1,260 @@
+nav{
+    position: fixed;
+    z-index: 5;
+    top: 2%;
+    left: 5%;
+    height: 5%;
+    width: 90%;
+    font-size: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #F5F3F4;
+    font-weight: 800;
+}
+
+body{
+    background-color: #D3D3D3;
+    
+}
+@keyframes sizechange{
+    0%{font-size: 90px;}
+    100%{font-size: 110px;}
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+#welcomegradient{
+    background: linear-gradient(to right,#161A1D, #E5383B);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    -moz-animation: cssAnimation 0s ease-in 1.5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 1.5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 1.5s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 1.5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+#welcomegradient i{
+    color: white;
+    font-size: 90px;
+    align-self: center;
+    justify-self: center;
+    animation: sizechange 0.5s ease-in 4 alternate backwards;
+}
+
+  
+#welcomeBody{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://image.freepik.com/free-photo/beautiful-sexy-fashion-blond-girl-model-with-bright-makeup-curly-hairstyle-retro-style-sitting-old-car_158538-9302.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 500px 90px 50px;
+}
+#closebtn {
+    display: none;
+    position: absolute;
+    top: 20vh;
+    left: 65vw;
+    font-size: 56px;
+    color: black;
+    font-weight: 900;
+    text-decoration: none;
+    z-index: 5;
+}
+#container{
+    position: absolute;
+    left: 40vw;
+    top: 20vh;
+    z-index: 4;
+    overflow: hidden;
+    padding: 10px 10px;
+    grid-row: 1/2;
+    width: 0px;
+    height: 0px;
+    align-self: center;
+    justify-self: center;
+    transition: 0.6s;    
+}
+#signupContainer{
+    background-color: #0B090A;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    color: white;
+    border-radius: 40px;
+    padding: 10px 10px;
+}
+#loginContainer{
+    background-color: #0B090A;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    color: white;
+    border-radius: 40px;
+    padding: 10px 10px;
+    
+}
+.icon{
+    background: -webkit-linear-gradient(#161A1D, #E5383B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 70px;
+    align-self: center;
+}
+form{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+label{
+    z-index: 10;
+    transform: translateY(40px);
+    font-size: 20px;
+    transition: 1s;
+}
+input{
+    width: 200px;
+    z-index: 12;
+    color: #F5F3F4;
+    background-color: transparent;
+    border-bottom: solid;
+    border-bottom-color: #D3D3D3;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 40px;
+    transition: 1s;
+}
+input:focus{
+    border-bottom-color: #E5383B;
+    outline: none;
+}
+h1{
+    grid-row: 2/3;
+    font-size: 70px;
+    justify-self: center;
+    color: #F5F3F4;
+}
+p{
+    color: #D3D3D3;
+}
+#titlep{
+    grid-row: 3/4;
+    font-size: 40px;
+    justify-self: center;
+    
+}
+button{
+    align-self: center;
+    justify-self: center;
+    border-color: white;
+    padding: 2px 16px;
+    font-size: 20px;
+    background-color: transparent;
+}
+.but {
+    color: #F5F3F4;
+    position: relative;
+    z-index: 9;
+    display: inline-block;
+    padding: 0px 0px;
+    overflow: hidden;
+    transition: 1s;
+}
+#signup{
+    padding: 8px 40px;
+}
+.but a{
+    color: inherit;
+    text-decoration: none;
+    padding: 20px 50px;
+}
+.button-helper {
+    transform: translateX(-100%);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,transparent,#E5383B,transparent);
+    transition: 0.4s;
+}
+.but:hover{
+    box-shadow: 0 0 20px 10px #E5383B;
+}
+.but:hover .button-helper {
+    transform: translateX(100%);
+}
+@media (max-width: 6in){
+    body{
+        min-height: 100vh;
+    }
+    nav{
+        
+        font-size: 30px;
+        
+    }
+    #welcomeBody{
+        grid-template-rows: 450px 70px 40px;
+    }
+    #container{
+        left: 20vw;   
+    }
+    #signupContainer{
+        border-radius: 30px;
+    }
+    #loginContainer{
+        border-radius: 30px;
+    }
+    .icon{
+        font-size: 40px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    #titlep{
+        font-size: 20px;
+    }
+    button{
+        font-size: 20px;
+    }
+    .but a{
+        padding: 5px 40px;
+    }
+    #closebtn{
+        left: 85vw;
+        top: 15vh;
+    }
+}

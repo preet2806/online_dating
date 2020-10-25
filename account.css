@@ -1,0 +1,325 @@
+body{
+    
+    background-color: #0B090A;
+    
+}
+.highlight{
+    background: -webkit-linear-gradient(#ffffff, #E5383B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
+#sidebar{
+
+    position: fixed;
+    left: 5.5%;
+    top: 0%;
+    height: 100%;
+    width: 25%;
+    background-color: rgba(0,0,0,0.5);
+    
+    
+}
+
+#matchContainer{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: space-evenly;
+}
+.matchDp{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    
+}
+.messageDp{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    
+}
+.match{
+    margin-right: 4%;
+    color: white;
+    font-weight: 400;
+    font-family: josefin sans;
+}
+#selection{
+    margin-top: 3%;
+    font-size: 30px;
+    font-family: josefin sans;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+a{
+    text-decoration: none;
+}
+#editProfile{
+    position: relative;
+    text-align: center;
+    color: #F5F3F4;
+    height: 10%;
+    margin-top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+}
+#editProfile a{
+    color: #F5F3F4;
+    justify-self: center;
+    font-size: 30px;
+    overflow: hidden;
+    z-index: 3;
+}
+.button-helper {
+    transform: translateX(-66%);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(120deg,transparent,#E5383B,transparent);
+    transition: 0.4s;
+}
+#editProfile:hover .button-helper {
+    transform: translateX(0%);
+}
+h1{
+    margin-top: 0%;
+    color: black;
+}
+.icon{
+    height: inherit;
+    width: auto;
+    margin-right: 1%;
+}
+.icon2{
+    width: 10%;
+    margin-left: 45%;
+    margin-top: 5%;
+}
+.messageContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.message{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 3%;
+}
+#cardsContainer{
+    position: fixed;
+    right: 25%;
+    top: 10%;
+    width: 25%;
+    height: 80%;
+    color: ivory;
+
+}
+@keyframes leftback{
+    0%{transform: rotateZ(0deg) translateX(0px);opacity: 1;}
+    50%{transform: rotateZ(-25deg) translateX(-300px);opacity: 0;}
+    100%{transform: rotateZ(0deg) translateX(0px);opacity: 0;}
+}
+@keyframes rightback{
+    0%{transform: rotateZ(0deg) translateX(0px);opacity: 1;}
+    50%{transform: rotateZ(25deg) translateX(300px);opacity: 0;}
+    100%{transform: rotateZ(0deg) translateX(0px);opacity: 0;}
+}
+#nocards{
+    margin-top: 20%;
+    position: absolute;
+    z-index: 0;
+    height: 50%;
+    width: 50%;
+    background-color: #390809;
+    border-radius: 20px;
+    transition: 1s;
+    opacity: 1;
+    color: white;
+}
+.card{
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: #390809;
+    border-radius: 20px;
+    transition: 1s;
+    opacity: 1;
+}
+
+.cardDp{
+    height: 90%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #161A1D;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.cardName{
+    align-self: center;
+    color: white;
+    font-family: josefin sans;
+}
+#buttonContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2% 0%;
+    font-size: 50px;
+    
+}
+
+.bio{
+    color: #cdd6dd;
+}
+.agelocation{
+    color: #cdd6dd
+}
+#buttonContainer i{
+    background: -webkit-linear-gradient(#A4161A, #E5383B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.nodisplay{
+    display: none;
+    width: 0vw;
+    height: 0vh;
+}
+#chat{
+    height: 90%;
+    width: 100%;
+}
+#chatBox{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#userDetails{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+#userDp
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 3%;
+
+}
+#goBackButton{
+    border-color: black;
+    align-self: center;
+    background-color: transparent;
+    border-radius: 20px;
+    background: -webkit-linear-gradient(#ffffff, #E5383B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 0%;
+}
+#userName{
+    font-family: josefin sans;
+    margin-left: 2%;
+    color: white;
+    font-weight: 400;
+    
+}
+#chatWindow{
+    width: 100%;
+    height: 90%;
+    margin-bottom: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#sendDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 3%;
+}
+#sendMessage{
+    background-color: white;
+    border-radius: 20px;
+}
+#send{
+    
+    background: -webkit-linear-gradient(#ffffff, #E5383B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 20px;
+
+}
+.messageName{
+    margin-left: 3%;
+    color: white;
+    font-weight: 400;
+    font-family: josefin sans;
+}
+.matchName{
+    
+    color: white;
+    font-weight: 400;
+    font-family: josefin sans;
+}
+#switch{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 300px;
+    height: 20px;
+    color: white;
+}
+@media (max-width: 6in){
+    #sidebar{
+        position: absolute;
+        z-index: 2;
+        top: 0vh;
+        left: 0vw;
+        height: 100vh;
+        width: 0vw;
+        background-color: rgba(0,0,0,1);
+        overflow: hidden;
+        transition: 0.3s;
+        
+    }
+    #modeswitch{
+        font-size: 30px;
+        background: -webkit-linear-gradient(#161A1D, #E5383B);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    #matchContainer{
+        margin-left: 5%;
+    }
+    
+    #cardsContainer{
+        z-index: 1;
+        position: fixed;
+        right: 5%;
+        top: 10%;
+        width: 85%;
+        height: 80%;
+    
+    }
+    #buttonContainer{
+        padding: 2% 0%;
+        font-size: 40px;
+    }
+    
+}

@@ -1,0 +1,335 @@
+body{
+    background-color: #7a7887;
+    
+    
+}
+.icon{
+    background: -webkit-linear-gradient(#161A1D, #E5383B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 70px;
+    align-self: center;
+}
+#logo{
+    font-weight: 400;
+}
+#logo i{
+    background: -webkit-linear-gradient(#161A1D, #E5383B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#signupDetails{
+    padding: 10px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 40px;
+
+}
+#continueButton{
+    margin-top: 40px;
+    padding: 4px 0px;
+}
+#signupElement{
+    font-size: 40px;
+    background-color: #7a7887;
+    color: #1c2130;
+    padding: 5% 10%;
+    margin-top: 2%;
+}
+#signupBody{
+    opacity: 0.4;
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+p{
+    color: #7a7887;
+    line-height: 0%;
+    align-self: center;
+}
+
+nav{
+    position: fixed;
+    z-index: 5;
+    top: 2%;
+    left: 5%;
+    height: 5%;
+    width: 90%;
+    font-size: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: #F5F3F4;
+    font-weight: 800;
+}
+
+#title{
+    align-self: center;
+    font-size:80px;
+    font-weight: 500;
+    color: white;
+    margin-top: 7%;
+    font-family: mr de haviland;
+    line-height: 0%;
+}
+ul{
+    margin-top: 0%;
+}
+#alertContainer{
+    overflow: hidden;
+    border-style: solid;
+    position: fixed;
+    left: 35vw;
+    top: 15vh;
+    width: 30vw;
+    height: 70vh;
+    background-color: #0B090A;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 1;
+    transition: 0.5s;
+    box-shadow: 0px 2px 4px 0px #000000;
+}
+.radioClass{
+    margin-top: 50px;
+    height: 30px;
+}
+.radioClass label{
+    margin-top: 0px;
+}
+@keyframes click-wave {
+    0% {
+      height: 40px;
+      width: 40px;
+      opacity: 0.35;
+      position: relative;
+    }
+    100% {
+      height: 200px;
+      width: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0;
+    }
+}
+  
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    transition: all 0.15s ease-out 0s;
+    background: #D3D3D3;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+}
+.option-input:hover {
+    background: #7a7887;
+}
+.option-input:checked {
+    background: #E5383B;
+}
+.option-input:checked::before {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+.option-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #E5383B;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.option-input.radio {
+    border-radius: 50%;
+}
+.option-input.radio::after {
+    border-radius: 50%;
+}
+label{
+    margin-top: 50px;
+    color: #ffffff;
+    z-index: 10;
+    transform: translateY(40px);
+    font-size: 20px;
+    transition: 1s;
+}
+input{
+    width: 100%;
+    z-index: 12;
+    color: #F5F3F4;
+    background-color: transparent;
+    border-bottom: solid;
+    border-bottom-color: #D3D3D3;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 60px;
+    transition: 1s;
+    font-size: 30px;
+    font-weight: 100;
+}
+input:focus{
+    border-bottom-color: #E5383B;
+    outline: none;
+}
+h3{
+    color: white;
+    font-size: 35px;
+    font-family: josefin sans;
+    line-height: 2%;
+    
+}
+button{
+    align-self: center;
+    justify-self: center;
+    border-color: white;
+    padding: 2px 16px;
+    font-size: 20px;
+    background-color: transparent;
+}
+#formTitle{
+    color: white;
+    font-family: mr de haviland;
+    font-size: 75px;
+    font-weight: 400;
+    align-self: center;
+}
+.but {
+    color: #F5F3F4;
+    position: relative;
+    z-index: 9;
+    display: inline-block;
+    padding: 0px 0px;
+    overflow: hidden;
+    transition: 1s;
+}
+#agree{
+    padding: 8px 40px;
+}
+.but a{
+    color: inherit;
+    text-decoration: none;
+    padding: 20px 50px;
+}
+.button-helper {
+    transform: translateX(-100%);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,transparent,#E5383B,transparent);
+    transition: 0.4s;
+}
+.but:hover{
+    box-shadow: 0 0 20px 10px #E5383B;
+}
+.but:hover .button-helper {
+    transform: translateX(100%);
+}
+@media (max-width: 6in){
+    .icon{
+        font-size: 40px;
+    }
+    #continueButton{
+        font-size:20px;
+        padding: 0.5% 0%;
+        margin-left: 25%;
+        margin-right: 25%;
+    } 
+    nav{
+        font-size: 35px;
+    }
+    
+    #title{
+        font-size:50px;
+    }
+    #alertContainer{
+        left: 10vw;
+        top: 15vh;
+        width: 80vw;
+        height: 70vh;
+    }
+    h3{
+        font-size: 25px;
+        
+    }
+    #agree{
+        font-size:15px;
+        padding: 3% 0.4%;
+    }
+    #formTitle{
+        margin-top: 20%;
+        font-size: 35px;
+    }
+    p{
+        font-size: 15px;
+        line-height: 15px;
+    }
+    label{
+        margin-top: 30px;
+        font-size: 20px;
+    }
+    input{
+        height: 40px;
+        transition: 1s;
+        font-size: 20px;
+    }
+    @keyframes click-wave {
+        0% {
+          height: 20px;
+          width: 20px;
+          opacity: 0.35;
+          position: relative;
+        }
+        100% {
+          height: 100px;
+          width: 100px;
+          margin-left: -40px;
+          margin-top: -40px;
+          opacity: 0;
+        }
+    }
+      
+    .option-input {
+        height: 20px;
+        width: 20px;
+    }
+    .option-input:checked::before {
+        height: 20px;
+        width: 20px;
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
