@@ -53,7 +53,7 @@
 <nav id="navbar"><div id="logo"><i class="fas fa-feather-alt"></i>Vmatch</div></nav>
 <body>
     <div id="signupBody">
-        <h1 id="formTitle">Create Account</h1>
+        <h1 id="formTitle">Edit Account</h1>
         <label for="dp">Profile photo</label>
         <input id="dp" onfocusout="outon(this)" onfocus="focuson(this)"  class="signupelement" type="file" name="dp">
         <button class="but" onclick="uploadpic()"><span class="button-helper"></span><a>upload picture</a></button>

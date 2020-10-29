@@ -13,6 +13,7 @@
     $mypref_location = $_POST['pref_location']; 
     $mypref_age = $_POST['pref_age'];
     $mypref_gender = $_POST['pref_gender'];   
+    $mydpurl = $_POST['dpurl'];
     $sql = "select user_id from Login_table where email_id = '$myusername'";  
         $result = mysqli_query($con, $sql);  
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
@@ -34,18 +35,23 @@
                     $sql5="INSERT into `login_table` VALUES ('$myuserid','$myusername','$mypassword')";
                     if($con->query($sql5)==true){
                         echo 'succesfully inserted3 ';
-                        $sql = "select user_id from Login_table where email_id = '$myusername'";
-                        $result = mysqli_query($con, $sql);
-                        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-                        $count = mysqli_num_rows($result);
-                        /*$id=$row['user_id'];
-                        $_SESSION['login_user'] = $id;
-                        var_dump($_SESSION);
-                        */
-                        echo '<script type="text/javascript">';
-                        echo ' alert("account created")';  //not showing an alert box.
-                        echo '</script>';
-                        header("Location: index.php");
+                        $sql6="INSERT into `picture_table` VALUES (default,'$myuserid','$mydpurl')";
+                        if($con->query($sql6)==true){
+                            $sql = "select user_id from Login_table where email_id = '$myusername'";
+                            $result = mysqli_query($con, $sql);
+                            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+                            $count = mysqli_num_rows($result);
+                            /*$id=$row['user_id'];
+                            $_SESSION['login_user'] = $id;
+                            var_dump($_SESSION);
+                            */
+                            
+                            echo '<script type="text/javascript">';
+                            echo ' alert("account created")';  //not showing an alert box.
+                            echo '</script>';
+                            header("Location: index.php");
+                        }
+                        
                         
                     }
                     else{
