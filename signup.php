@@ -1,7 +1,6 @@
 <?php
     include("connect.php");
-    session_start();
-    var_dump($_POST);        
+    session_start();      
     $myusername = $_POST['userEmail'];
         
     $sql = "select user_id from Login_table where email_id = '$myusername'";  

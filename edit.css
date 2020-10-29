@@ -1,5 +1,5 @@
 body{
-    background-color: #7a7887;
+    background-color: #161A1D;
     
     
 }
@@ -38,7 +38,6 @@ body{
     margin-top: 2%;
 }
 #signupBody{
-    opacity: 0.4;
     width: 60%;
     height: 100%;
     margin-left: 20%;
@@ -80,22 +79,6 @@ nav{
 ul{
     margin-top: 0%;
 }
-#alertContainer{
-    overflow: hidden;
-    border-style: solid;
-    position: fixed;
-    left: 35vw;
-    top: 15vh;
-    width: 30vw;
-    height: 70vh;
-    background-color: #0B090A;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    opacity: 1;
-    transition: 0.5s;
-    box-shadow: 0px 2px 4px 0px #000000;
-}
 .radioClass{
     margin-top: 50px;
     height: 30px;
@@ -118,9 +101,7 @@ ul{
       opacity: 0;
     }
 }
-#dpurl{
-    display: none;
-}
+  
 .option-input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -181,9 +162,12 @@ label{
     margin-top: 50px;
     color: #ffffff;
     z-index: 10;
-    transform: translateY(40px);
+    opacity: 1;
     font-size: 20px;
     transition: 1s;
+}
+#none{
+    display: none;
 }
 input{
     width: 100%;

@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="signup.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="edit.css" media="screen"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
-    
-    <script src="signup.js"></script>
-     <!-- The core Firebase JS SDK is always required and must be listed first -->
-     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
      <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
      <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -60,72 +57,69 @@
         <label for="dp">Profile photo</label>
         <input id="dp" onfocusout="outon(this)" onfocus="focuson(this)"  class="signupelement" type="file" name="dp">
         <button class="but" onclick="uploadpic()"><span class="button-helper"></span><a>upload picture</a></button>
-        <form id="signupDetails" action="createprofile.php" method="POST" autocomplete="off" >
+        <form id="signupDetails" autocomplete="off" action="editprofile.php" method="POST">
             <label for="firstname">Email id</label>
-            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="email" name="userEmail">
+            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="email" name="userEmail" value="<?php session_start(); echo $_SESSION['myusername'];?>">
             <label for="firstname">password</label>
-            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="password" name="userPassword">
+            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="password" name="userPassword" value="<?php echo $_SESSION['mypassword'];?>">
             <label for="firstname">User id</label>
-            <input id="userid" onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="text" name="userid">
+            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="text" name="userid" value="<?php echo $_SESSION['myuserid'];?>">
             <label for="firstname">First name</label>
-            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="text" name="firstname">
+            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="text" name="firstname" value="<?php  echo $_SESSION['myname'];?>">
             <label for="gender">Gender</label>
             <div class="radioClass">
                 <label>
-                    <input type="radio" value="Male" class="option-input radio" name="gender"/>
+                    <input type="radio" value="Male" class="option-input radio" name="gender" <?php if($_SESSION['mygender']==='Male'){echo "checked";} ?>/>
                     Male
                   </label>
                   <label>
-                    <input type="radio" value="Female" class="option-input radio" name="gender" />
+                    <input type="radio" value="Female" class="option-input radio" name="gender" <?php if($_SESSION['mygender']==='Female'){echo "checked";} ?>/>
                     Female
                 </label>
             </div>
             <label for="dateofbirth">age</label>
-            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="number" name="age">
-            <input id="dpurl" type="text" name="dpurl">
+            <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="number" name="age" value="<?php  echo $_SESSION['myage'];?>">
+            <input id="none" type="text" name="dpurl">
             <label for="bio">Bio</label>
-            <input onfocusout="outon(this)" onfocus="focuson(this)"  class="signupelement" type="text" name="bio">
+            <input onfocusout="outon(this)" onfocus="focuson(this)"  class="signupelement" type="text" name="bio" value="<?php echo $_SESSION['mybio'];?>">
             <label for="location">my location</label>
             <div class="radioClass">
                 <label>
-                    <input type="radio" value="vellore" class="option-input radio" name="location"/>
+                    <input type="radio" value="vellore" class="option-input radio" name="location" <?php if($_SESSION['mylocation']==='vellore'){echo "checked";} ?>/>
                     vellore
                   </label>
                   <label>
-                    <input type="radio" value="chennai" class="option-input radio" name="location" />
+                    <input type="radio" value="chennai" class="option-input radio" name="location" <?php if($_SESSION['mylocation']==='chennai'){echo "checked";} ?>/>
                     chennai
                 </label>
             </div>
             <label for="pref_age">preffered age</label>
-            <input onfocusout="outon(this)" onfocus="focuson(this)"  class="signupelement" type="number" name="pref_age">
+            <input onfocusout="outon(this)" onfocus="focuson(this)"  class="signupelement" type="number" name="pref_age" value="<?php echo $_SESSION['mypref_age'];?>">
             <label for="pref_gender">preffered location</label>
             <div class="radioClass">
                 <label>
-                    <input type="radio" value="vellore" class="option-input radio" name="pref_location"/>
+                    <input type="radio" value="vellore" class="option-input radio" name="pref_location" <?php if($_SESSION['mypref_location']=='vellore'){echo "checked";} ?>/>
                     vellore
                   </label>
                   <label>
-                    <input type="radio" value="chennai" class="option-input radio" name="pref_location" />
+                    <input type="radio" value="chennai" class="option-input radio" name="pref_location" <?php if($_SESSION['mypref_location']=='chennai'){echo "checked";} ?>/>
                     chennai
                 </label>
             </div>
             <label for="pref_gender">looking for</label>
             <div class="radioClass">
                 <label>
-                    <input type="radio" value="Male" class="option-input radio" name="pref_gender"/>
+                    <input type="radio" value="Male" class="option-input radio" name="pref_gender" <?php if($_SESSION['mypref_gender']=='Male'){echo "checked";} ?>/>
                     Male
                   </label>
                   <label>
-                    <input type="radio" value="Female" class="option-input radio" name="pref_gender" />
+                    <input type="radio" value="Female" class="option-input radio" name="pref_gender" <?php if($_SESSION['mypref_gender']=='Female'){echo "checked";} ?>/>
                     Female
                 </label>
             </div>
-            <button class="but" id="continueButton" onclick="uploadpic()" type="submit"><span class="button-helper"></span><a>Continue</a></button>
+            <button class="but" id="continueButton" type="submit"><span class="button-helper"></span><a>Continue</a></button>
             
         </form>
     </div>
 
 </body>
-<div id=container>
-    <div id="alertContainer"><div class="icon"><i class="fas fa-feather-alt"></i></div><h1 id="title">welcome</h1><p>please follow these house rules</p><ul><li><h3>Be yourself</h3><p>make sure your age bip and pictures are true to who you are</p></li><li><h3>stay safe</h3><p>dont give out personal information too soon</p></li><li><h3>play it cool</h3><p>respect others and treat them as you would like to be treated</p></li></ul><button class="but" onclick="removeit()" id="agree"><span class="button-helper"></span>I AGREE</button></div>
-</div>

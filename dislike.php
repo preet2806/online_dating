@@ -15,33 +15,20 @@
         if($count != 0){
             if($row["User_1"]===$fromuser){
                 echo "yes";
-                $sql2="UPDATE `like_table` SET `Like_12` = '1' WHERE `like_table`.`User_1` = '$fromuser' AND `like_table`.`User_2` = '$touser'";
-                $sql3="SELECT * FROM `like_table` WHERE LIKE_12=1 and User_1='$fromuser' AND User_2='$touser' AND LIKE_21=1;";
+                $sql2="UPDATE `like_table` SET `Like_12` = '-1' WHERE `like_table`.`User_1` = '$fromuser' AND `like_table`.`User_2` = '$touser'";
             }
             else{
-                $sql2="UPDATE `like_table` SET `Like_21` = '1' WHERE `like_table`.`User_2` = '$fromuser' AND `like_table`.`User_1` = '$touser'";
-                $sql3="SELECT * FROM `like_table` WHERE LIKE_12=1 and User_2='$fromuser' AND User_1='$touser' AND LIKE_21=1;";
+                $sql2="UPDATE `like_table` SET `Like_21` = '-1' WHERE `like_table`.`User_2` = '$fromuser' AND `like_table`.`User_1` = '$touser'";
             }
             //var_dump($sql2);
             if ($con->query($sql2) === TRUE) {
                 echo "New record created successfully";
             } else {
                 echo "Error: " . $sql2 . "<br>" . $con->error;
-            }
-            $result3 = mysqli_query($con, $sql3);  
-            $row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC);  
-            $count3 = mysqli_num_rows($result3);
-            if($count3 != 0){
-                $sql4 = "INSERT INTO Match_table ('$fromuser','$touser')";
-                if ($con->query($sql2) === TRUE) {
-                    echo "New record created successfully";
-                } else {
-                    echo "Error: " . $sql2 . "<br>" . $con->error;
-                }
-            }            
+            }          
         }
         else{
-            $sql2="INSERT INTO `like_table` (`User_1`, `User_2`, `Like_12`, `Like_21`) VALUES ('$_SESSION[login_user]', '$touser', '1', '0')";
+            $sql2="INSERT INTO `like_table` (`User_1`, `User_2`, `Like_12`, `Like_21`) VALUES ('$_SESSION[login_user]', '$touser', '-1', '0')";
             if ($con->query($sql2) === TRUE) {
                 echo "New record created successfully";
             } else {
