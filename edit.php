@@ -79,7 +79,7 @@
             </div>
             <label for="dateofbirth">age</label>
             <input onfocusout="outon(this)" onfocus="focuson(this)" class="signupelement" type="number" name="age" value="<?php  echo $_SESSION['myage'];?>">
-            <input id="none" type="text" name="dpurl">
+            <input id="dpurl" class="none" type="text" name="dpurl">
             <label for="bio">Bio</label>
             <input onfocusout="outon(this)" onfocus="focuson(this)"  class="signupelement" type="text" name="bio" value="<?php echo $_SESSION['mybio'];?>">
             <label for="location">my location</label>

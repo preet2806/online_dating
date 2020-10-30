@@ -75,7 +75,7 @@ const matchesDisplay = () => {
             jsonData=JSON.parse(xhr.responseText);
             console.log(jsonData);
             for (var i = 0; i < jsonData.length; i++){
-                htmlstring='<div class="match" onclick="goToChat(this)"><img src="'+jsonData[i]["picture"]+'" alt="'+jsonData[i]["match_id"]+'" class="matchDp"><h4 class="matchName">'+jsonData[i]["user_name"]+'</h4></div>';
+                htmlstring='<div class="match" onclick="goToChat(this)"><div class="matchDp"><img src="'+jsonData[i]["picture"]+'" alt="'+jsonData[i]["match_id"]+'"></div><h4 class="matchName">'+jsonData[i]["user_name"]+'</h4></div>';
                 matchContainer.innerHTML += htmlstring;
             } 
         }    
@@ -105,7 +105,7 @@ const messagesDisplay = () => {
             jsonData=JSON.parse(xhr.responseText);
             console.log(jsonData);
             for (var i = 0; i < jsonData.length; i++){
-                htmlstring='<div class="message" onclick="goToChat(this)"><img src="'+jsonData[i]["picture"]+'"  alt="'+jsonData[i]["match_id"]+'" class="messageDp"><h4 class="messageName">'+jsonData[i]['matchuser']+'</h4></div>';
+                htmlstring='<div class="message" onclick="goToChat(this)"><div class="messageDp"><img src="'+jsonData[i]["picture"]+'"  alt="'+jsonData[i]["match_id"]+'"></div><h4 class="messageName">'+jsonData[i]['matchuser']+'</h4></div>';
                 messageContainer.innerHTML += htmlstring;
             } 
         }    
@@ -122,10 +122,10 @@ const messagesDisplay = () => {
 const goToChat = (n) => {
     
     var name=n.lastChild.innerHTML;
-    var pic=n.firstChild;
+    var pic=n.firstChild.firstChild;
     var matchid=pic.alt;
     console.log(pic.src);
-    document.getElementById("chat").innerHTML='<div id="chatBox"><div id="userDetails"><button onclick="goBack()" id="goBackButton"><div class="but">back</div></button><img id="userDp" src="'+pic.src+'"><h2 id="userName">'+name+'</h2></div><div id="chatWindow"><div id="userchat"></div><div id="sendDiv"><form id="sendform" action="send.php" method="post"><input id="none2" name="match_id" value="'+matchid+'"><input name="message" id="sendMessage" type="text"><button id="send" type="submit"><div class="but">send</div></button></form></div></div></div>';
+    document.getElementById("chat").innerHTML='<div id="chatBox"><div id="userDetails"><button onclick="goBack()" id="goBackButton"><div class="but">back</div></button><div id="userDp"><img src="'+pic.src+'"></div><h2 id="userName">'+name+'</h2></div><div id="chatWindow"><div id="userchat"></div><div id="sendDiv"><form id="sendform" action="send.php" method="post"><input id="none2" name="match_id" value="'+matchid+'"><input name="message" id="sendMessage" type="text"><button id="send" type="submit"><div class="but">send</div></button></form></div></div></div>';
     const xhr = new XMLHttpRequest();
     let jsonData=[];
     xhr.onreadystatechange = function () 
