@@ -13,7 +13,7 @@ const signupDiv = () => {
     
     document.getElementById("welcomeBody").style.opacity=0.3;
     document.getElementById("navbar").style.opacity=0.3;
-    document.getElementById("container").innerHTML = '<div id="signupContainer"><div class="icon"><i class="fas fa-feather-alt"></i></div><form id="signupForm" action="signup.php" method="post"><label>Email-address</label><input onfocusout="outon(this)" onfocus="focuson(this)" name="userEmail" type="email" class="signupElement"><label for="mobile">Mobile number</label><input name="userNumber" onfocusout="outon(this)" onfocus="focuson(this)" name="mobile" type="text" class="signupElement"><p>already a user? <a onclick="loginDiv()">login</a></p><button id="signupButton" type="submit" class="but"><a><span class="button-helper"></span>go</a></button></form></div>';
+    document.getElementById("container").innerHTML = '<div id="signupContainer"><div class="icon"><i class="fas fa-feather-alt"></i></div><form id="signupForm" action="signup.php" method="post"><label>Email-address</label><input onfocusout="outon(this)" onfocus="focuson(this)" name="userEmail" type="email" class="signupElement"><p>already a user? <a onclick="loginDiv()">login</a></p><button id="signupButton" type="submit" class="but"><a><span class="button-helper"></span>go</a></button></form></div>';
     document.getElementById("container").style.width = '20vw';
     document.getElementById("container").style.height = '60vh';
     document.getElementById("closebtn").style.display = 'flex';
