@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2020 at 11:22 AM
+-- Generation Time: Dec 28, 2020 at 12:51 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -41,21 +41,63 @@ CREATE TABLE `like_table` (
 INSERT INTO `like_table` (`User_1`, `User_2`, `Like_12`, `Like_21`) VALUES
 ('2chirayu', 'danoushka', 1, 1),
 ('2chirayu', 'dshailee', 1, 1),
-('2chirayu', 'mahira15', 1, 0),
+('2chirayu', 'rsashi', -1, 0),
+('2chirayu', 'rshreya', 1, 0),
+('amrita1', 'roh1t', 1, 0),
+('ankush123', 'nandinimo', 1, 0),
+('ankush123', 'userexample', 1, 0),
+('danoushka', 'dshailee', 1, 0),
+('danoushka', 'mahira15', 1, 0),
+('danoushka', 'mish15', 0, 0),
+('danoushka', 'nandinimo', 1, 0),
 ('dhruvvv3', 'mish15', 1, 0),
 ('dhruvvv3', 'preet28', 1, 1),
 ('dinalaloy', 'deltad', 1, 0),
-('dinalaloy', 'dshailee', 1, 0),
+('dinalaloy', 'dshailee', 1, 1),
+('dinalaloy', 'sanjanana', 1, 1),
 ('dkeval', 'dhruvvv3', 0, 1),
+('dshailee', '2sushant', 1, 0),
+('dshailee', 'deveshvv3', 0, 0),
+('dshailee', 'jayie', 1, 0),
 ('dshailee', 'joeie', 1, 0),
+('dshailee', 'ravii', 1, 0),
+('dshailee', 'roh1t', 1, 0),
+('flynn', '2chirayu', 1, 0),
+('flynn', 'dhruvvv3', 0, 0),
+('flynn', 'dvedant', 1, 0),
+('flynn', 'joeie', 1, 0),
+('kushk', '2chirayu', 1, 0),
+('kushk', 'dhruvvv3', 1, 0),
+('kushk', 'dvedant', 0, 0),
+('kushk', 'flynn', 1, 0),
+('kushk', 'joeie', 1, 0),
+('mahira15', 'dkeval', 1, 0),
+('mahira15', 'farhan', 1, 0),
 ('mahira15', 'kedarnathk', 1, 1),
+('mahira15', 'kushk', 1, 0),
 ('mahira15', 'roh1t', 0, 0),
 ('margip', 'roh1t', 1, 0),
 ('mish15', 'roh1t', 1, 1),
 ('nandinimo', 'userexample', 0, 1),
-('pearlmot', '2chirayu', 1, 0),
-('pearlmot', 'ravii', 0, 0),
+('pearlmot', '2chirayu', 1, 1),
+('pearlmot', 'ankush123', 1, 0),
+('pearlmot', 'dinalaloy', 1, 0),
+('pearlmot', 'jayie', 1, 0),
+('pearlmot', 'preat', 1, 0),
+('pearlmot', 'ravii', 1, 1),
 ('pearlmot', 'roh1t', 1, 0),
+('preat', 'dkeval', 0, 0),
+('preat', 'farhan', 0, 0),
+('preat', 'kedarnathk', 1, 1),
+('preat', 'kushk', 1, 0),
+('prernar', 'prachi20', 1, 1),
+('prernar', 'preet28', 1, 0),
+('prernar', 'rsashi', 1, 0),
+('prernar', 'rshreya', 1, 0),
+('roh1t', 'prachi20', 1, 1),
+('roh1t', 'preet28', 1, 0),
+('roh1t', 'rsashi', 1, 0),
+('roh1t', 'rshreya', 1, 0),
 ('rsashi', 'mahira15', 0, 0),
 ('rsashi', 'mish15', 0, 0),
 ('rsashi', 'nandinimo', 0, 0),
@@ -64,7 +106,9 @@ INSERT INTO `like_table` (`User_1`, `User_2`, `Like_12`, `Like_21`) VALUES
 ('userexample', 'dshailee', 1, 1),
 ('userexample', 'mahira15', 1, 0),
 ('userexample', 'mish15', 1, 1),
-('userexample', 'prachi20', 1, 0);
+('userexample', 'prachi20', 1, 0),
+('userexample', 'rsashi', 0, 0),
+('userexample', 'rshreya', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -83,6 +127,8 @@ CREATE TABLE `login_table` (
 --
 
 INSERT INTO `login_table` (`user_id`, `email_id`, `user_password`) VALUES
+('amrita1', 'amrita@gmail.com', 'amritadbms'),
+('ankush123', 'ankush@gmail.com', 'ankush'),
 ('rshreya', 'ayerhs@gmail.com', 'kllih4'),
 ('2chirayu', 'chiryu@gmail.com', 'uhfoeij'),
 ('danoushka', 'dano@gmail.com', 'ojocoold'),
@@ -102,10 +148,12 @@ INSERT INTO `login_table` (`user_id`, `email_id`, `user_password`) VALUES
 ('margip', 'margi@gmail.com', 'mar123'),
 ('mish15', 'mishra@gmail.com', 'iju498'),
 ('nandinimo', 'nandiniy@gmail.com', 'lldko'),
+('nithyas', 'nithya@gmail.com', 'dbms'),
 ('pearlmot', 'pearly@gmail.com', 'coko'),
 ('prachi20', 'prashi@gmail.com', '9999us'),
 ('preet28', 'pree@yahoo.com', '99njujn'),
 ('preat', 'preey@gmail.com', '99nju'),
+('prernar', 'prernarathi@gmail.co', 'venkar'),
 ('ravii', 'ravi@gmail.com', 'raviravi'),
 ('roh1t', 'rohi@gmail.com', 'hjn24'),
 ('sanjanana', 'sanjana@gmail.com', 'sanjana'),
@@ -132,8 +180,14 @@ INSERT INTO `match_table` (`match_id`, `User_1`, `User_2`) VALUES
 (11, '2chirayu', 'danoushka'),
 (2, '2chirayu', 'dshailee'),
 (3, 'dhruvvv3', 'preet28'),
+(20, 'dinalaloy', 'dshailee'),
+(19, 'dinalaloy', 'sanjanana'),
 (4, 'mahira15', 'kedarnathk'),
 (5, 'mish15', 'roh1t'),
+(22, 'pearlmot', '2chirayu'),
+(21, 'preat', 'kedarnathk'),
+(15, 'prernar', 'prachi20'),
+(14, 'roh1t', 'prachi20'),
 (12, 'userexample', 'danoushka'),
 (13, 'userexample', 'dshailee'),
 (1, 'userexample', 'mish15');
@@ -161,7 +215,22 @@ INSERT INTO `message_table` (`Message_id`, `match_id`, `From_user`, `message`, `
 (2, 1, 'userexample', 'heyy!!', '2020-10-28 15:09:10'),
 (3, 1, 'mish15', 'hello', '2020-10-28 15:47:04'),
 (4, 1, 'userexample', 'how are you', '2020-10-28 17:07:06'),
-(10, 12, 'userexample', 'hey', '2020-10-29 10:19:24');
+(10, 12, 'userexample', 'hey', '2020-10-29 10:19:24'),
+(11, 12, 'userexample', 'how are you', '2020-10-29 12:34:42'),
+(12, 4, 'mahira15', 'hello kedarnath', '2020-10-30 12:39:33'),
+(13, 2, 'dshailee', 'coffee?', '2020-10-30 12:42:46'),
+(14, 2, 'mish15', 'i am fine', '2020-10-30 13:12:01'),
+(16, 1, 'userexample', 'lets meet', '2020-10-31 08:59:47'),
+(17, 11, '2chirayu', 'hello', '2020-12-27 09:03:44'),
+(18, 11, '2chirayu', 'i am fine', '2020-12-27 09:24:23'),
+(19, 22, '2chirayu', 'hi', '2020-12-27 09:25:28'),
+(20, 22, '2chirayu', 'hi', '2020-12-27 09:25:34'),
+(21, 22, '2chirayu', 'how are you', '2020-12-27 09:27:29'),
+(22, 2, '2chirayu', 'shailee?', '2020-12-27 09:33:05'),
+(23, 2, '2chirayu', 'this is chiryu', '2020-12-27 09:34:04'),
+(24, 2, '2chirayu', 'hello?', '2020-12-27 09:34:32'),
+(25, 11, '2chirayu', 'aboushka?', '2020-12-27 09:35:52'),
+(26, 11, '2chirayu', 'h', '2020-12-27 09:36:56');
 
 -- --------------------------------------------------------
 
@@ -203,7 +272,17 @@ INSERT INTO `picture_table` (`pic_id`, `user_id`, `picture`) VALUES
 (22, 'dvedant', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/profile-serious-male-scientist-with-stubble-taking-picture-nature-his-black-generic-digital-tablet-while-working-scientific-research-jungle.jpg?alt=media&token=718c863d-2751-43c4-a817-20442468ba93'),
 (23, 'farhan', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/smiling-photographer-posing.jpg?alt=media&token=a44ea222-7de1-496a-ab07-1273a7eecb11'),
 (24, 'flynn', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/young-guy-posing-zoo-with-parrot-his-hand-bearded-man-bird.jpg?alt=media&token=a67806e2-2371-4046-9b3a-a9d11a5d8130'),
-(25, 'jayie', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/young-handsome-man-listens-music-with-earphones.jpg?alt=media&token=e4ac4b79-d39f-48f7-b614-210be955d60a');
+(25, 'jayie', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/young-handsome-man-listens-music-with-earphones.jpg?alt=media&token=e4ac4b79-d39f-48f7-b614-210be955d60a'),
+(26, 'prernar', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/outdoor-summer-smiling-lifestyle-portrait-pretty-young-woman-having-fun-city-europe-evening-with-camera-travel-photo-photographer-making-pictures.jpg?alt=media&token=981897ad-54f3-41cc-84ca-29d3997ff9d8'),
+(27, 'joeie', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/man-portrait.jpg?alt=media&token=34357d0a-0dec-4591-9732-b244e3224f25'),
+(28, 'kedarnathk', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/close-up-portrait-handsome-smiling-young-man-white-t-shirt-looking-away-blurry-outdoor-nature.jpg?alt=media&token=df08e439-1987-456c-a82b-55f89077f9e7'),
+(29, 'kushk', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/portrait-happy-pensive-young-businessman-wears-white-shirt-office.jpg?alt=media&token=a61397b7-9c57-447e-8c49-f77327d74da4'),
+(30, 'ravii', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/photo-laughting-african-american-attracrive-guy-sits-cafe-works-laptop-drinks-aromatic-coffee-enjoy-his-freelance-work.jpg?alt=media&token=9004c586-0d50-4d9b-9b17-c650c02f65bd'),
+(31, 'roh1t', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/portrait-young-man-looking-camera.jpg?alt=media&token=e7b509f6-8a07-4d13-bd7b-fd4e545e3a65'),
+(32, 'userexample', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/joyful-stylish-guy-glasses-posing-apartment-balcony.jpg?alt=media&token=a3700fee-712c-49eb-a274-f901405a3389'),
+(34, 'amrita1', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/modern-woman-taking-selfie.jpg?alt=media&token=c2cd6cc2-90b6-4b9a-8cb1-137e6db44a1f'),
+(35, 'ankush123', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/outdoor-summer-smiling-lifestyle-portrait-pretty-young-woman-having-fun-city-europe-evening-with-camera-travel-photo-photographer-making-pictures.jpg?alt=media&token=e96b0100-aad3-4a4a-a7c5-e502f5071ee0'),
+(36, 'nithyas', 'https://firebasestorage.googleapis.com/v0/b/vmatch-57c66.appspot.com/o/outdoor-summer-smiling-lifestyle-portrait-pretty-young-woman-having-fun-city-europe-evening-with-camera-travel-photo-photographer-making-pictures.jpg?alt=media&token=946db8ea-fb20-4297-b0fe-96225c0dbc23');
 
 -- --------------------------------------------------------
 
@@ -252,7 +331,13 @@ INSERT INTO `preference_table` (`pref_id`, `pref_location`, `pref_age`, `pref_ge
 (27, 'chennai', 20, 'Female'),
 (28, 'chennai', 20, 'Male'),
 (29, 'vellore', 18, 'Male'),
-(30, 'vellore', 18, 'Male');
+(30, 'vellore', 18, 'Male'),
+(37, 'vellore', 19, 'Male'),
+(38, 'vellore', 18, 'Female'),
+(39, 'vellore', 18, 'Male'),
+(40, 'chennai', 20, 'Male'),
+(41, 'chennai', 20, 'Female'),
+(42, 'vellore', 18, 'Male');
 
 -- --------------------------------------------------------
 
@@ -277,6 +362,8 @@ CREATE TABLE `user_table` (
 INSERT INTO `user_table` (`user_id`, `user_name`, `age`, `gender`, `location`, `bio`, `pref_id`) VALUES
 ('2chirayu', 'chirayu', 20, 'Male', 'chennai', 'hi il', 2),
 ('2sushant', 'sushant', 19, 'Male', 'vellore', 'hi il', 20),
+('amrita1', 'amrita', 20, 'Female', 'chennai', 'hey', 40),
+('ankush123', 'ankush', 19, 'Male', 'vellore', 'hey', 41),
 ('danoushka', 'anoushka d', 19, 'Female', 'vellore', 'hill', 21),
 ('deltad', 'delta', 20, 'Female', 'chennai', 'hey', 14),
 ('deveshvv3', 'devesh', 19, 'Male', 'vellore', 'hello', 23),
@@ -295,10 +382,12 @@ INSERT INTO `user_table` (`user_id`, `user_name`, `age`, `gender`, `location`, `
 ('margip', 'margi', 20, 'Female', 'chennai', 'hello!', 18),
 ('mish15', 'swati m', 19, 'Female', 'vellore', 'bonjour', 9),
 ('nandinimo', 'nandini', 19, 'Female', 'vellore', 'this is my bio', 22),
+('nithyas', 'nithya', 20, 'Female', 'chennai', 'hey', 42),
 ('pearlmot', 'pearl', 20, 'Female', 'chennai', 'this is my bio', 11),
 ('prachi20', 'prachi', 18, 'Female', 'vellore', 'hey', 30),
 ('preat', 'preet', 20, 'Female', 'chennai', 'hey', 10),
 ('preet28', 'preet', 18, 'Female', 'vellore', 'tres', 15),
+('prernar', 'prerna', 20, 'Female', 'chennai', 'cia', 38),
 ('ravii', 'ravi', 19, 'Male', 'vellore', 'hey', 17),
 ('roh1t', 'rohit m', 19, 'Male', 'vellore', 'hi i am dinal', 1),
 ('rsashi', 'sashi', 18, 'Female', 'vellore', 'hello', 28),
@@ -367,19 +456,19 @@ ALTER TABLE `user_table`
 -- AUTO_INCREMENT for table `match_table`
 --
 ALTER TABLE `match_table`
-  MODIFY `match_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `match_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `message_table`
 --
 ALTER TABLE `message_table`
-  MODIFY `Message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `picture_table`
 --
 ALTER TABLE `picture_table`
-  MODIFY `pic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `pic_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `preference_table`
