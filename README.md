@@ -1,6 +1,6 @@
 # online_dating
 this project uses php and mysql
-#Installation Steps
+# Installation Steps
 -install Xampp
 -then clone this directory and save it inside your htdocs folder.
 -go to Xampp control panel and start apache and Mysql
