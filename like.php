@@ -3,7 +3,7 @@
     include("connect.php");
     session_start();
     var_dump(file_get_contents('php://input'));
-    $touser = $_POST['touser']; 
+    $touser = $_POST['to_user']; 
     $fromuser = $_SESSION['login_user'];  
     $sql = "SELECT * FROM `like_table` WHERE (user_1='$touser' and user_2='$fromuser') or (user_2='$touser' and user_1='$fromuser')";  
         $result = mysqli_query($con, $sql);  
@@ -48,5 +48,6 @@
                 echo "Error: " . $sql2 . "<br>" . $con->error;
             }
         }
-        header("Location: account.php");
+        //header("Location: account.php");
+        echo json_encode('Yes, it works!');
 ?>

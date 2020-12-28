@@ -53,10 +53,9 @@
         }
     }
     if($myuserid!=$_SESSION['myuserid']){
-            echo '<script type="text/javascript">';
-            echo ' alert("cannot change userid")';  //not showing an alert box.
-            echo '</script>';
-        
+        echo '<script type="text/javascript">';
+        echo ' alert("cannot change userid")';  //not showing an alert box.
+        echo '</script>';    
     }
     if($mypassword!=$_SESSION['mypassword']){
         $sql= "UPDATE `login_table` SET `user_password` = '$mypassword' WHERE `login_table`.`email_id` = '$myusername';";

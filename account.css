@@ -144,6 +144,14 @@ h1{
     0%{transform: rotateZ(0deg) translateX(0px);opacity: 1;}
     50%{transform: rotateZ(25deg) translateX(300px);opacity: 0;}
     100%{transform: rotateZ(0deg) translateX(0px);opacity: 0;}
+}.grad{
+    position: absolute;
+    bottom: 0px;
+    background-image: linear-gradient(180deg, transparent, rgba(0,0,0,0.99));
+    height: 350px;
+    width: 100%;
+    z-index: 100;
+    border-radius: 20px;
 }
 #nocards{
     margin-top: 20%;
@@ -159,7 +167,6 @@ h1{
 }
 .card{
     position: absolute;
-    z-index: 1;
     height: 100%;
     width: 100%;
     background-color: #390809;
@@ -181,15 +188,7 @@ h1{
     background-position-y: top;
     background-position-x: center;
 }
-.grad{
-    position: absolute;
-    bottom: 0px;
-    background-image: linear-gradient(180deg, transparent, rgba(0,0,0,0.99));
-    height: 350px;
-    width: 100%;
-    z-index: 100;
-    border-radius: 20px;
-}
+
 .cardName{
     align-self: center;
     color: white;

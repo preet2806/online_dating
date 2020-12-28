@@ -14,7 +14,7 @@ window.onload = () =>{
                 console.log(jsonData);
                 for (var i = 0; i < jsonData.length; i++){
                     console.log(i)
-                    htmlcardid='<div id="'+jsonData[i]["user_id"]+'" class="card"><div class="cardDp"><div class="grad"></div><h2 class="cardName">'+jsonData[i]["user_name"]+'</h2><div class="agelocation">'+jsonData[i]["age"]+','+jsonData[i]["location"]+'</div><div class="bio">'+jsonData[i]["bio"]+'</div></div><div id="buttonContainer"><form action="dislike.php" method="post"><input name="touser" type="text" value="'+jsonData[i]["user_id"]+'"><button onclick="leftswipe(this)"><i  class="far fa-times-circle"></i></button type="submit"></form><form action="like.php" method="post"><input name="touser" type="text" value="'+jsonData[i]["user_id"]+'"><button type="submit"><i onclick="rightswipe(this)" class="far fa-check-circle"></i></button></form></div></div>';
+                    htmlcardid='<div id="'+jsonData[i]["user_id"]+'" class="card"><div class="cardDp"><div class="grad"></div><h2 class="cardName">'+jsonData[i]["user_name"]+'</h2><div class="agelocation">'+jsonData[i]["age"]+','+jsonData[i]["location"]+'</div><div class="bio">'+jsonData[i]["bio"]+'</div></div><div id="buttonContainer"><button><i  onclick="leftswipe(this)" class="far fa-times-circle"></i></button><button><i onclick="rightswipe(this)" class="far fa-check-circle"></i></button></div></div>';
                     document.getElementById("cardsContainer").innerHTML+=htmlcardid;
                     document.getElementById(jsonData[i]["user_id"]).style.zIndex=i;
                     document.getElementById(jsonData[i]["user_id"]).firstChild.style.backgroundImage='url("'+jsonData[i]["picture"]+'")';
@@ -45,12 +45,50 @@ window.onload = () =>{
 }
 const leftswipe = (n) =>{
     console.log(n.parentNode.parentNode)
-    n.parentNode.parentNode.parentNode.parentNode.style.animation="leftback 1s linear 0s 1 normal forwards";
-    n.parentNode.parentNode.parentNode.parentNode.style.zIndex="-1";
+    var foo = n.parentNode.parentNode.parentNode.id;
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function() 
+    {
+        if(this.readyState === 4) 
+        {
+            if(this.status==200 || this.status==201)
+            {
+                let newData = JSON.parse(this.responseText);
+                console.log(newData);
+            }
+            else{
+                alert("invalid link");
+            }
+        }
+    });
+    xhr.open("POST", "dislike.php" , true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send("to_user="+foo);
+    n.parentNode.parentNode.parentNode.style.animation="leftback 1s linear 0s 1 normal forwards";
+    n.parentNode.parentNode.parentNode.style.zIndex="-1";
 }
 const rightswipe = (n) =>{
-    n.parentNode.parentNode.parentNode.parentNode.style.animation="rightback 1s linear 0s 1 normal forwards";
-    n.parentNode.parentNode.parentNode.parentNode.style.zIndex="-1";
+    var foo = n.parentNode.parentNode.parentNode.id;
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function() 
+    {
+        if(this.readyState === 4) 
+        {
+            if(this.status==200 || this.status==201)
+            {
+                let newData = JSON.parse(this.responseText);
+                console.log(newData);
+            }
+            else{
+                alert("invalid link");
+            }
+        }
+    });
+    xhr.open("POST", "like.php" , true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send("to_user="+foo);
+    n.parentNode.parentNode.parentNode.style.animation="rightback 1s linear 0s 1 normal forwards";
+    n.parentNode.parentNode.parentNode.style.zIndex="-1";
 };
 
 const swipemode = () => {
@@ -120,12 +158,12 @@ const messagesDisplay = () => {
     xhr.send();
 };
 const goToChat = (n) => {
-    
+    console.log(n);
     var name=n.lastChild.innerHTML;
     var pic=n.firstChild.firstChild;
     var matchid=pic.alt;
     console.log(pic.src);
-    document.getElementById("chat").innerHTML='<div id="chatBox"><div id="userDetails"><button onclick="goBack()" id="goBackButton"><div class="but">back</div></button><div id="userDp"><img src="'+pic.src+'"></div><h2 id="userName">'+name+'</h2></div><div id="chatWindow"><div id="userchat"></div><div id="sendDiv"><form id="sendform" action="send.php" method="post"><input id="none2" name="match_id" value="'+matchid+'"><input name="message" id="sendMessage" type="text"><button id="send" type="submit"><div class="but">send</div></button></form></div></div></div>';
+    document.getElementById("chat").innerHTML='<div id="chatBox"><div id="userDetails"><button onclick="goBack()" id="goBackButton"><div class="but">back</div></button><div id="userDp"><img src="'+pic.src+'"></div><h2 id="userName">'+name+'</h2></div><div id="chatWindow"><div id="userchat"></div><div id="sendDiv"><input name="message" id="sendMessage" type="text"><button id="send" type="submit" onclick="send('+matchid+',this)"><div class="but">send</div></button></div></div></div>';
     const xhr = new XMLHttpRequest();
     let jsonData=[];
     xhr.onreadystatechange = function () 
@@ -143,7 +181,6 @@ const goToChat = (n) => {
                     htmlmessage='<div class="messagetext" id="'+jsonData[i]["message_id"]+'">'+jsonData[i]["message"]+'</div>';
                     document.getElementById("userchat").innerHTML+=htmlmessage;
                     if(count==0){
-                        document.getElementById("sendform").innerHTML+='<input id="none" type="text" name="match_id" value="'+jsonData[i]["match_id"]+'">';
                         //console.log(document.getElementById(jsonData[i]["message_id"]).classList);
                         count++
                     }
@@ -174,4 +211,27 @@ const goBack = () => {
     {
         document.getElementById("selection").innerHTML+='<a onclick="swipemode()">Swipe</a>';
     }
+}
+const send = (m,n) => {
+    var match_id = m;
+    var message = n.parentNode.firstChild.value;
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function() 
+    {
+        if(this.readyState === 4) 
+        {
+            if(this.status==200 || this.status==201)
+            {
+                let newData = JSON.parse(this.responseText);
+                console.log(newData);
+            }
+            else{
+                alert("invalid link");
+            }
+        }
+    });
+    xhr.open("POST", "send.php" , true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send("match_id="+match_id+"&message="+message);
+    n.parentNode.firstChild.value=null;
 }

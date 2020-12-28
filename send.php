@@ -11,5 +11,6 @@
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
-    header("Location: account.php");
+    //header("Location: account.php");
+    echo json_encode('Yes, it works!');
 ?>
